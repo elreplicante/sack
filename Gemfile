@@ -28,9 +28,11 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-group :test do
+group :development, :test do
   gem 'rspec-rails'
   gem 'cucumber-rails', require: false
+  gem 'webrat'
+  gem 'database_cleaner'
 end
 
 # Use ActiveModel has_secure_password
