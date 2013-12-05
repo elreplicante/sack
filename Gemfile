@@ -33,16 +33,24 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+group :test do
+  gem 'selenium-webdriver'
+  gem 'capybara'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'cucumber-rails', require: false
-  gem 'webrat'
   gem 'database_cleaner'
   gem 'teaspoon'
   gem 'factory_girl_rails'
   gem 'guard-rspec'
   gem 'faker'
   gem 'pry'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 # Use ActiveModel has_secure_password
