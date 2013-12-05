@@ -33,6 +33,7 @@ group :development, :test do
   gem 'cucumber-rails', require: false
   gem 'webrat'
   gem 'database_cleaner'
+  gem 'teaspoon'
 end
 
 # Use ActiveModel has_secure_password
