@@ -1,0 +1,19 @@
+$alizarin: #e74c3c;
+$pomegranate: #cb3f30;
+
+body {
+    background: $alizarin;
+    .bck.color {
+        background: $alizarin;    
+    }
+}
+
+body .button:not(.transparent), body button:not(.transparent) {
+    background: $alizarin;
+}
+
+body .button:not(.transparent).secondary,
+body button:not(.transparent).secondary {
+    background: $pomegranate;
+}
+
