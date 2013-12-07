@@ -5,7 +5,7 @@ describe StaticPagesController do
   describe "GET 'index'" do
     it "returns http success" do
       get 'home'
-      response.should be_success
+      expect(response).to be_success
     end
   end
 
