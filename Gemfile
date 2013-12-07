@@ -47,6 +47,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'faker'
   gem 'pry'
+  gem 'mongoid-rspec'
 end
 
 group :production do
