@@ -1,19 +1,24 @@
 $alizarin: #e74c3c;
 $pomegranate: #cb3f30;
+$orange: #F98200;
+$red: #CC2525;
+$green: #00A06E;
+$blue: #2565C7;
+$dark: #0D1628;
 
 body {
-    background: $alizarin;
+    background: $dark;
     .bck.color {
-        background: $alizarin;    
+        background: $dark;    
     }
 }
 
 body .button:not(.transparent), body button:not(.transparent) {
-    background: $alizarin;
+    background: $orange;
 }
 
 body .button:not(.transparent).secondary,
 body button:not(.transparent).secondary {
-    background: $pomegranate;
+    background: $orange;
 }
 
