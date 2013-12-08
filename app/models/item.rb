@@ -4,5 +4,5 @@ class Item
   field :name, type: String
   field :description, type: String
 
-  validates_presence_of :url
+  validates_presence_of :url, :name, :description
 end
