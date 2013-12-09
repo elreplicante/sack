@@ -1,7 +1,6 @@
 Sack::Application.routes.draw do
   root 'static_pages#home'
-  get 'items/index', to: 'items#index', as: :index
-  get 'items/show', to: 'items#show', as: :show
+  resources :items
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

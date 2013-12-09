@@ -14,7 +14,6 @@ describe Item do
   it { should validate_presence_of(:url) }
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:description) }
-
   
   it { should belong_to(:sack) }
 
@@ -28,5 +27,4 @@ describe Item do
       expect(item.url).to start_with('http://')
     end
   end
-
 end
