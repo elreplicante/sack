@@ -20,12 +20,11 @@ describe Item do
 
   describe "url field" do
     it "can start with 'http://'" do
-      item = build(:item, url: 'http://example')
       expect(item.url).to start_with('http://')
     end
 
     it "adds 'http://' if not present" do
-      item = create(:item, url: 'http://example')
+      item = create(:item, url: 'example.com')
       expect(item.url).to start_with('http://')
     end
   end
