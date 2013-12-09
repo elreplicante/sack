@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe StaticPagesController do
 
-  describe "GET 'index'" do
+  describe "GET 'home'" do
     it "returns http success" do
       get 'home'
       expect(response).to be_success
