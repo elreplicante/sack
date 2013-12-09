@@ -4,7 +4,7 @@ class Item
   field :name, type: String
   field :description, type: String
 
-  belongs_to :sack
+  embedded_in :sack
   attr_accessor :url
   validates_presence_of :url, :name, :description
 
