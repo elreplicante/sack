@@ -5,8 +5,7 @@ class Item
   field :description, type: String
 
   belongs_to :sack
-
-  attr_accessor :set_url
+  attr_accessor :url
   validates_presence_of :url, :name, :description
 
   before_save :set_url
@@ -17,7 +16,6 @@ class Item
   end
 
   def valid_url?
-
     self.url.starts_with?('http://') || self.url.starts_with?('https://')
   end
 end
