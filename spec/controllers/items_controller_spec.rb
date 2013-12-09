@@ -57,32 +57,41 @@ describe ItemsController do
     end
 
     describe "with valid params" do
-        it "updates the requested item" do
-          Item.any_instance.should_receive(:update).with({ "name" => "A name" })
-          put :update, {
-            id: item.to_param, 
-            item: { "name" => "A name" }
-            }, valid_session
-        end
-
-        it "assigns the requested item as @item" do
-          put :update, {
-            id: item.to_param, 
-            item: { "name" => "A name" }
-            }, valid_session
-          expect(assigns(:item)).to eq(item)
-        end
+      it "updates the requested item" do
+        Item.any_instance.should_receive(:update).with({ "name" => "A name" })
+        put :update, {
+          id: item.to_param, 
+          item: { "name" => "A name" }
+          }, valid_session
       end
 
-      describe "with invalid params" do
-        it "assigns the item as @item" do
-          Item.any_instance.stub(:build).and_return(true)
-          put :update, {
-            id: item.to_param, 
-            item: { "url" => "url" }
-            }, valid_session
-          assigns(:item).should eq(item)
-        end
+      it "assigns the requested item as @item" do
+        put :update, {
+          id: item.to_param, 
+          item: { "name" => "A name" }
+          }, valid_session
+        expect(assigns(:item)).to eq(item)
       end
+    end
+
+    describe "with invalid params" do
+      it "assigns the item as @item" do
+        Item.any_instance.stub(:build).and_return(true)
+        put :update, {
+          id: item.to_param, 
+          item: { "url" => "url" }
+          }, valid_session
+        assigns(:item).should eq(item)
+      end
+    end
+  end
+
+  describe "deleting an item" do
+    it "destroys the requested item" do
+      item = create(:item)
+      expect {
+        delete :destroy, {id: item.to_param}, valid_session
+      }.to change(Item, :count).by(-1)
+    end
   end
 end
