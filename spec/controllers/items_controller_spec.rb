@@ -12,4 +12,13 @@ describe ItemsController do
       expect(assigns(:items)).to eq([item])
     end
   end
+
+
+  describe "showing an item" do
+    it "lists the item as @item" do
+      get :show, { id: item.to_param }, valid_session
+      expect(assigns(:item)).to eq(item)
+    end
+  end
+
 end
