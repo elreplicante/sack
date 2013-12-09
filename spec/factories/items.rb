@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :item do
-    url "http://emxample.com"
+    url "example.com"
     name "Example Item"
     description "Example description"
   end
