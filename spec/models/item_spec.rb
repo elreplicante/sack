@@ -15,7 +15,7 @@ describe Item do
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:description) }
   
-  it { should belong_to(:sack) }
+  it { should belong_to(:sak) }
 
   describe "url field" do
     it "can start with 'http://'" do
@@ -23,7 +23,7 @@ describe Item do
     end
 
     it "adds 'http://' if not present" do
-      item = create(:item, url: 'example.com')
+      item = create(:item, url: 'example.com' )
       expect(item.url).to start_with('http://')
     end
   end
