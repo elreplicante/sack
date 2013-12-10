@@ -21,7 +21,7 @@ describe Item do
     end
 
     xit "adds 'http://' if not present" do
-      item = create(:item, url: 'example.com' )
+      item = build(:item, url: 'example.com' )
       expect(item.url).to start_with('http://')
     end
   end

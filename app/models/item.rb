@@ -10,7 +10,7 @@ class Item
   validates_presence_of :url, :name, :description
   validates_url :url
   
-  after_save :set_url
+  after_build :set_url
 
   private
   def set_url
