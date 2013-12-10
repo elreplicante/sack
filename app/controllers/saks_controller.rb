@@ -1,0 +1,2 @@
+class SaksController < ApplicationController
+end

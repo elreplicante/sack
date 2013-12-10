@@ -2,5 +2,6 @@
 
 FactoryGirl.define do
   factory :sak do
+    items { [build(:item), build(:item)] }
   end
 end

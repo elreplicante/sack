@@ -7,7 +7,7 @@ class Item
 
   attr_accessor :url
 
-  belongs_to :sak
+  embedded_in :sak
 
   validates_presence_of :url, :name, :description
   validates_url :url, allow_blank: true
