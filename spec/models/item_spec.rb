@@ -15,8 +15,6 @@ describe Item do
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:description) }
   
-  it { should be_embedded_in(:sak) }
-
   describe "url field" do
     it "can start with 'http://'" do
       expect(item.url).to start_with('http://')

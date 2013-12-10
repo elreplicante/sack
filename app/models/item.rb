@@ -7,10 +7,8 @@ class Item
 
   attr_accessor :url
 
-  embedded_in :sak
-
   validates_presence_of :url, :name, :description
-  validates_url :url, allow_blank: true
+  validates_url :url
   
   after_save :set_url
 

@@ -2,14 +2,13 @@ require 'spec_helper'
 
 describe ItemsController do
 
-  let(:sak) { create(:sak) }
+  let(:item) { create(:item) }
   let(:valid_attributes) { attributes_for :item }
-  let(:item) { create(:item, sak: sak) }
   let(:valid_session) { {} }   
 
   describe "showing all items" do
     it "lists all items as @items" do
-      get :index, {sak: sak.to_param, item: item.to_param}, valid_session
+      get :index, {id: item.to_param }, valid_session
       expect(assigns(:items)).to eq([item])
     end
   end
@@ -89,7 +88,7 @@ describe ItemsController do
 
   describe "deleting an item" do
     it "destroys the requested item" do
-      item = create(:item, sak: sak)
+      item = create(:item)
       expect {
         delete :destroy, {id: item.to_param}, valid_session
       }.to change(Item, :count).by(-1)

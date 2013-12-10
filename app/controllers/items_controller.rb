@@ -2,6 +2,7 @@ class ItemsController < ApplicationController
 
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
+
   def index
     @items = Item.all
   end
@@ -36,6 +37,6 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    @item = Sak.find(params[:sak_id]).Item.find(params[:id])
+    @item = Item.find(params[:id])
   end
 end
