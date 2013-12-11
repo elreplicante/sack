@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :item do
     url "http://example.com"
-    title "Example Item"
-    description "Example description"
+    title "Item"
+    description "description"
   end
 end
