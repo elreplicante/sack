@@ -20,8 +20,9 @@ describe Item do
       expect(item.url).to start_with('http://')
     end
 
-    xit "adds 'http://' if not present" do
-      item = build(:item, url: 'example.com' )
+    it "adds 'http://' if not present" do
+      item = build(:item, url: 'example.com')
+      binding.pry
       expect(item.url).to start_with('http://')
     end
   end
