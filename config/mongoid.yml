@@ -87,5 +87,5 @@ production:
       password: <password>
       database: <database>
       options:
-        skip_version_check: true
+        skip_version_check: false
         safe: true
