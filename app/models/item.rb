@@ -5,7 +5,7 @@ class Item
   field :name, type: String
   field :description, type: String
 
-  attr_accessor :url
+
 
   validates_presence_of :url, :name, :description
   validates_url :url

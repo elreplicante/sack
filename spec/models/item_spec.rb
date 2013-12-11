@@ -15,15 +15,4 @@ describe Item do
   it { should validate_presence_of(:name) }
   it { should validate_presence_of(:description) }
   
-  describe "url field" do
-    it "can start with 'http://'" do
-      expect(item.url).to start_with('http://')
-    end
-
-    it "adds 'http://' if not present" do
-      item = build(:item, url: 'example.com')
-      binding.pry
-      expect(item.url).to start_with('http://')
-    end
-  end
 end

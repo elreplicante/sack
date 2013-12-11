@@ -16,7 +16,11 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    @item.save
+    if @item.save
+      redirect_to items_path, notice: 'Item was added to the sack' 
+    else
+      render action: :new
+    end
   end
 
   def edit
