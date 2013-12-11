@@ -12,10 +12,11 @@ class Item
   validates_presence_of :url, :title, :description
   validates_url :url
 
-  after_build :title
+  after_build :parser
 
   def title
-    self.title = parser.css('title').text
+    page = Nokogiri::HTML(open(url.to_s))
+    self.title = page.css('title').text
   end
 
   def description
@@ -23,7 +24,7 @@ class Item
   end
 
   def parser
-    Nokogiri::HTML(RestClient.get(url.to_s))
+    page = Nokogiri::HTML(open(url.to_s))
+    title = page.css('title').text
   end
-
 end
