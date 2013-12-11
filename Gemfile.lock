@@ -259,6 +259,7 @@ DEPENDENCIES
   jquery-rails
   mongoid (~> 4.0.0.alpha1)
   mongoid-rspec
+  nokogiri
   pry
   pry-debugger
   rails (= 4.0.2)

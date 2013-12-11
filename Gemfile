@@ -5,11 +5,11 @@ gem 'rails', '4.0.2'
 
 gem "mongoid", "~> 4.0.0.alpha1"
 
-
 gem 'simple_form'
 gem 'devise'
 gem 'authority'
 gem 'validate_url'
+gem 'nokogiri'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
