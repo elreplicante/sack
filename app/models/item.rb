@@ -1,23 +1,29 @@
+require 'open-uri'
+
 class Item
   include Mongoid::Document
   
   field :url, type: String
-  field :name, type: String
+  field :title, type: String
   field :description, type: String
 
+  attr_accessor :title
 
-
-  validates_presence_of :url, :name, :description
+  validates_presence_of :url, :title, :description
   validates_url :url
-  
-  after_build :set_url
 
-  private
-  def set_url
-    @url = 'http://' << @url unless valid_url?
+  after_build :title
+
+  def title
+    self.title = parser.css('title').text
   end
 
-  def valid_url?
-    @url.starts_with?('http://') || @url.starts_with?('https://')
+  def description
+    self.description = 'Mock description'
   end
+
+  def parser
+    Nokogiri::HTML(RestClient.get(url.to_s))
+  end
+
 end

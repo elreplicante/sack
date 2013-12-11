@@ -37,7 +37,7 @@ class ItemsController < ApplicationController
 
   protected
   def item_params
-    params.require(:item).permit(:url, :name, :description)
+    params.require(:item).permit(:url, :title, :description)
   end
 
   def set_item

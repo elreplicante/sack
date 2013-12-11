@@ -10,9 +10,45 @@ describe Item do
     end
   end
 
-  it { should have_fields(:url, :name, :description).of_type(String) }
+  it { should have_fields(:url, :title, :description).of_type(String) }
   it { should validate_presence_of(:url) }
-  it { should validate_presence_of(:name) }
+  it { should validate_presence_of(:title) }
   it { should validate_presence_of(:description) }
+
+  describe "Parsing an url" do
+    let(:title) { "Example Domain" }
+    let(:description) { "Mock description" }
+    let(:content) do  '''
+            <!DOCTYPE html>
+              <html>
+              <head>
+                <title>'+title+'</title>
+                <meta name="description"></meta>
+              </head>
+              <body>
+                  
+              </body>
+              </html>
+            '''
+    end
+
+
+
+    it "should set the item title with the website title" do
+      item = build(:item, url: 'http://example.com')
+
+      item.stub(:parser).and_return(Nokogiri::HTML(content))
+
+      expect(item.title).to eq(title)
+    end
+
+    it "should set the item description with the website meta description" do
+      item = build(:item, url: 'http://example.com')
+
+      item.stub(:parser).and_return(Nokogiri::HTML(content))
+
+      expect(item.description).to eq(description)
+    end
+  end
   
 end

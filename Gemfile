@@ -10,6 +10,7 @@ gem 'devise'
 gem 'authority'
 gem 'validate_url'
 gem 'nokogiri'
+gem 'rest-client'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
