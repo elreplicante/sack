@@ -1,9 +1,12 @@
-<section class="bck margin">
+<section class="bck margin text">
     <div class="row">
         <% @items.each do |item| %>
+            
+            <header>
+                <h5 class="text bold"><%= item.title %></h5>
+            </header>
             <%= item.url %>
-            <%= item.title %>
-            <%= item.description %>
+            <p><%= item.description %></p>
         <% end %>
     </div>
 </section>
