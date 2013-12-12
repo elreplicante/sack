@@ -14,12 +14,14 @@ body {
 }
 
 body .button:not(.transparent), body button:not(.transparent) {
-    background: $orange;
+    background: none;
+    color: $dark;
 }
 
 body .button:not(.transparent).secondary,
 body button:not(.transparent).secondary {
-    background: $orange;
+    background: $dark;
+    color: $dark;
 }
 
 body form input[type="text"]:required { border-color: $blue; color: $blue }
