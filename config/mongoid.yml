@@ -78,15 +78,14 @@ test:
 production:
   sessions:
     default:
-    uri:  <%= ENV['MONGOHQ_URL'] %>
-      # hosts:
-      #   - - <hostname>.dharma.mongohq.com
-      #     - <port_number>
-      #   - - <hostname>.dharma.mongohq.com
-      #     - <port_number>
-      # username: <username>
-      # password: <password>
-      # database: <database>
+      hosts:
+        - - <hostname>.dharma.mongohq.com
+          - <port_number>
+        - - <hostname>.dharma.mongohq.com
+          - <port_number>
+      username: <username>
+      password: <password>
+      database: <database>
       # options:
         #skip_version_check: true
         #safe: true
