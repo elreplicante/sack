@@ -1,10 +1,13 @@
 <section class="bck margin text">
     <div class="row">
         <% @items.each do |item| %>
+        <article>
             <header>
                 <h5 class="text bold"><%= link_to item.title, item.url %></h5>
             </header>
             <p><%= item.description %></p>
+            <%= link_to 'Edit', edit_item_path(item), class: 'button tiny' %>
+        </article>
         <% end %>
     </div>
 </section>

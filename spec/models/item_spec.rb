@@ -34,7 +34,7 @@ describe Item do
     it "should set the item title with the website title" do
       item = build(:item, url: 'http://example.com')
 
-      item.stub(:fetch_and_set_url).and_return(Nokogiri::HTML(content))
+      item.stub(:parser).and_return(Nokogiri::HTML(content))
 
       expect(item.title).to eq(title)
     end

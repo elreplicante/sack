@@ -1,0 +1,9 @@
+<section class="bck margin">
+  <div class="row">
+      <div class="column_4 align left">
+         <h1>Edit item</h1>
+         <p>url: <%= @item.url %></p>
+        <%= render partial: 'edit_item_form', locals: { item: @item } %>
+      </div>
+  </div>
+</section>
