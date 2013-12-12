@@ -259,7 +259,7 @@ DEPENDENCIES
   guard-rspec
   jbuilder (~> 1.2)
   jquery-rails
-  mongoid (~> 4.0.0.alpha1)
+  mongoid
   mongoid-rspec
   nokogiri
   pry
