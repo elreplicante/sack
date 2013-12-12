@@ -12,7 +12,7 @@ describe Item do
 
   it { should have_fields(:url, :title, :description).of_type(String) }
   it { should validate_presence_of(:url) }
-  it { should validate_presence_of(:title) }
+
 
   describe "Parsing an url" do
     let(:title) { "Example Domain" }
@@ -32,10 +32,10 @@ describe Item do
     end
 
     it "should set the item title with the website title" do
-      item = build(:item, url: 'http://example.com')
+      item = Item.new url: 'http://example.com'
 
-      item.stub(:parser).and_return(Nokogiri::HTML(content))
-
+      item.stub(:fetch_title).and_return(title)
+      item.save!
       expect(item.title).to eq(title)
     end
   end  

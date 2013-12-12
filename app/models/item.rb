@@ -7,11 +7,19 @@ class Item
   field :title, type: String
   field :description, type: String
 
-  validates_presence_of :url, :title
+  validates_presence_of :url
   validates_url :url
 
-  def title
-    page = Nokogiri::HTML(open(url.to_s))
-    title = page.css('title').text
+  before_create :set_title
+  
+  def set_title
+    logger.info '========='
+    self.title = fetch_title
+  end
+
+  protected
+  def fetch_title
+    page = Nokogiri::HTML(RestClient.get(url.to_s))
+    return page.css('title').text
   end
 end
