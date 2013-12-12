@@ -78,6 +78,7 @@ test:
 production:
   sessions:
     default:
+    uri: <%= ENV['MONGOHQ_URI'] %>
       hosts:
         - - <hostname>.member0.mongohq.com
           - <port_number>
