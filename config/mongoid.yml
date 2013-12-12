@@ -78,7 +78,7 @@ test:
 production:
   sessions:
     default:
-    uri:  mongodb://heroku:ad0a28f2005b743e9955a17774fc17b0@dharma.mongohq.com:10038/app20097695
+    uri:  <%= ENV['MONGOHQ_URL'] %>
       # hosts:
       #   - - <hostname>.dharma.mongohq.com
       #     - <port_number>
