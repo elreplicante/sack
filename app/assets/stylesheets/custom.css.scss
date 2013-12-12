@@ -22,3 +22,4 @@ body button:not(.transparent).secondary {
     background: $orange;
 }
 
+body form input[type="text"]:required { border-color: $blue; color: $blue }

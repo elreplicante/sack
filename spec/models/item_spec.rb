@@ -10,7 +10,7 @@ describe Item do
     end
   end
 
-  it { should have_fields(:url, :title, :description).of_type(String) }
+  it { should have_fields(:url, :title, :description, :content).of_type(String) }
   it { should validate_presence_of(:url) }
 
 
@@ -25,11 +25,13 @@ describe Item do
                 <meta name="description"></meta>
               </head>
               <body>
-                  
+                  Hola Mundo
               </body>
               </html>
             '''
     end
+
+    let(:body) { '<body>Hola Mundo</body>' } 
 
     it "should set the item title with the website title" do
       item = Item.new url: 'http://example.com'
@@ -37,6 +39,14 @@ describe Item do
       item.stub(:fetch_title).and_return(title)
       item.save!
       expect(item.title).to eq(title)
+    end
+
+    it "should set the item content with the website body" do
+      item = Item.new url: 'http://example.com'
+
+      item.stub(:fetch_content).and_return(body)
+      item.save!
+      expect(item.content).to eq('<body>Hola Mundo</body>')
     end
   end  
 end
