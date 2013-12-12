@@ -79,9 +79,9 @@ production:
   sessions:
     default:
       hosts:
-        - - <hostname>.member0.mongohq.com
+        - - <hostname>.dharma.mongohq.com
           - <port_number>
-        - - <hostname>.member1.mongohq.com
+        - - <hostname>.dharma.mongohq.com
           - <port_number>
       username: <username>
       password: <password>
