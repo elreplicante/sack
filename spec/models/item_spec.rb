@@ -46,7 +46,25 @@ describe Item do
 
       item.stub(:fetch_content).and_return(body)
       item.save!
-      expect(item.content).to eq('<body>Hola Mundo</body>')
+      expect(item.content).to eq(body)
+    end
+
+    context "fetching the description" do
+      it "should set the item description if present" do
+        item = Item.new url: 'http://example.com'
+
+        item.stub(:fetch_description).and_return(description)
+        item.save!
+        expect(item.description).to eq(description)
+      end
+
+      it "should set an empty description if not present" do
+        item = Item.new url: 'http://example.com'
+
+        item.stub(:fetch_description).and_return('')
+        item.save!
+        expect(item.description).to eq('')
+      end
     end
   end  
 end

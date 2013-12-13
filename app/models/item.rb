@@ -1,5 +1,3 @@
-require 'open-uri'
-
 class Item
   include Mongoid::Document
   
@@ -11,7 +9,7 @@ class Item
   validates_presence_of :url
   validates_url :url
 
-  before_create :set_title, :set_content
+  before_create :set_title, :set_content, :set_description
   
   def set_title
     self.title = fetch_title
@@ -19,6 +17,10 @@ class Item
 
   def set_content
     self.content = fetch_content
+  end
+
+  def set_description
+    self.description = fetch_description
   end
 
   protected
@@ -30,5 +32,14 @@ class Item
   def fetch_content
     page = Nokogiri::HTML(RestClient.get(url.to_s))
     page.css('body').text
+  end
+
+  def fetch_description
+    page = Nokogiri::HTML(RestClient.get(url.to_s))
+    meta_desc = page.css("meta[name='description']").first
+    if meta_desc
+      return meta_desc['content'] 
+    end
+    return '' 
   end
 end
