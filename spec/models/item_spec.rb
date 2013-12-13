@@ -58,7 +58,7 @@ describe Item do
         expect(item.description).to eq(description)
       end
 
-      it "should set an empty description if not present" do
+      it "should set an excerpt if not present" do
         item = Item.new url: 'http://example.com'
 
         item.stub(:fetch_description).and_return('')

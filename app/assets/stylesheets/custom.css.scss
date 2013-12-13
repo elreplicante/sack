@@ -9,9 +9,11 @@ $dark: #0D1628;
 body {
     .bck.dark {
     background: $dark;
-        
+    
     }
 }
+
+body, html { height: 100% }
 
 body .button:not(.transparent), body button:not(.transparent) {
     background: none;
@@ -25,3 +27,17 @@ body button:not(.transparent).secondary {
 }
 
 body form input[type="text"]:required { border-color: $blue; color: $blue }
+
+.sack-icon {
+     min-height: 100%;
+    height: 100%;
+    vertical-align: center;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    background: url('sack.png');
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    min-height: 300px;
+    }

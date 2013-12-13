@@ -1,6 +1,7 @@
 class Item
   include Mongoid::Document
   include Mongoid::Search
+  include Mongoid::Attributes::Dynamic
   
   field :url, type: String
   field :title, type: String
@@ -28,21 +29,17 @@ class Item
 
   protected
   def fetch_title
-    page = Nokogiri::HTML(RestClient.get(url))
-    page.css('title').text
+    page = Pismo::Document.new(url)
+    page.title
   end
 
   def fetch_content
-    page = Nokogiri::HTML(RestClient.get(url))
-    page.css('body').text
+    page = Pismo::Document.new(url)
+    page.body
   end
 
   def fetch_description
-    page = Nokogiri::HTML(RestClient.get(url.to_s))
-    meta_desc = page.css("meta[name='description']").first
-    if meta_desc
-      return meta_desc['content'] 
-    end
-    return '' 
+    page = Pismo::Document.new(url)
+    meta_desc = page.description
   end
 end

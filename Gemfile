@@ -9,7 +9,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'authority'
 gem 'validate_url'
-gem 'nokogiri'
+gem 'pismo'
 gem 'rest-client'
 gem 'mongoid_search'
 
