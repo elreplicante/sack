@@ -1,5 +1,6 @@
 class Item
   include Mongoid::Document
+  include Mongoid::Search
   
   field :url, type: String
   field :title, type: String
@@ -9,7 +10,9 @@ class Item
   validates_presence_of :url
   validates_url :url
 
-  before_create :set_title, :set_content, :set_description
+  before_save :set_title, :set_content, :set_description
+
+  search_in :title, :description, :content
   
   def set_title
     self.title = fetch_title
