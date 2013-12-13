@@ -3,7 +3,7 @@
     <div class="row">
         <article>
             <header>
-                <h5 class="text bold"><%= link_to item.title, item.url %></h5>
+                <h5 class="text bold"><%= link_to item.title, item.url, target: 'blank' %></h5>
             </header>
             <p><%= item.description %></p>
             <%= link_to 'Edit', edit_item_path(item), class: 'button secondary tiny' %>

@@ -25,12 +25,12 @@ class Item
 
   protected
   def fetch_title
-    page = Nokogiri::HTML(RestClient.get(url.to_s))
+    page = Nokogiri::HTML(RestClient.get(url))
     page.css('title').text
   end
 
   def fetch_content
-    page = Nokogiri::HTML(RestClient.get(url.to_s))
+    page = Nokogiri::HTML(RestClient.get(url))
     page.css('body').text
   end
 
