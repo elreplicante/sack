@@ -11,6 +11,7 @@ gem 'authority'
 gem 'validate_url'
 gem 'nokogiri'
 gem 'rest-client'
+gem 'mongoid_search'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'

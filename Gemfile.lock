@@ -97,6 +97,7 @@ GEM
       railties (>= 3.0.0)
     faker (1.2.0)
       i18n (~> 0.5)
+    fast-stemmer (1.0.2)
     ffi (1.9.3)
     formatador (0.2.4)
     gherkin (2.12.2)
@@ -135,6 +136,9 @@ GEM
       mongoid (>= 3.0.1)
       rake
       rspec (>= 2.14)
+    mongoid_search (0.3.2)
+      fast-stemmer (~> 1.0.0)
+      mongoid (>= 3.0.0)
     moped (2.0.0.beta4)
       bson (~> 2.0)
       connection_pool (~> 1.2)
@@ -266,6 +270,7 @@ DEPENDENCIES
   jquery-rails
   mongoid!
   mongoid-rspec
+  mongoid_search
   nokogiri
   pry
   pry-debugger
