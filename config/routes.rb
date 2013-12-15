@@ -1,5 +1,6 @@
 Sack::Application.routes.draw do
-  root 'static_pages#home'
+  root 'items#index'
+  get 'static_pages/home'
   resources :items
 
   # The priority is based upon order of creation: first created -> highest priority.

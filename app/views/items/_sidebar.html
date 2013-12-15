@@ -1,8 +1,10 @@
-<aside class="bck dark column_3 relative">
-    <article class="scroll">
+<aside class="bck column_3 relative">
+    <article>
     <div class="sack-icon margin align center">
+    <%= render partial: 'item_form', locals: { item: @item } %>
         <div class="margin counter" data-tuktuk="totals">
-            <strong><%= items.count %></strong><small>items</small>
+             <p class="notice"><%= notice %></p>
+            <strong><%= items.count %></strong><small> items in your sack</small>
         </div>
     </div>  
     </article>  

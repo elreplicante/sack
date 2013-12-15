@@ -1,12 +1,4 @@
 <%= render partial: 'sidebar', locals: { items: @items }  %>
 <section class="bck text">
-    <% @items.each do |item| %>
-        <article>
-            <header>
-                <h5 class="text bold"><%= link_to item.title, item.url, target: 'blank' %></h5>
-            </header>
-            <p><%= item.description %></p>
-            <%= link_to 'Edit', edit_item_path(item), class: 'button secondary tiny' %>
-        </article>
-    <% end %>
+    
 </section>
