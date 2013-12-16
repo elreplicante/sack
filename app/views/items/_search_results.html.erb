@@ -1,0 +1,11 @@
+<section class="row text">
+    <% items.each do |item| %>
+        <article class="margin-left padding bck light margin-bottom item-result">
+                <%= link_to item.title,
+                    item.url,
+                    target: 'blank',
+                    class: 'text underline color darkest' %>:
+            <small><%= item.description %></small>
+        </article>
+    <% end %>
+</section>

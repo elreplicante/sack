@@ -12,7 +12,7 @@ class Item
   validates_url :url
 
   after_validation :fetch_url
-  before_create :set_title, :set_content, :set_description
+  after_validation :set_title, :set_content, :set_description
 
   search_in :title, :description, :content
   
@@ -50,6 +50,10 @@ class Item
   end
 
   def set_description
-    self.description = fetch_description
+    if fetch_description == nil
+      self.description = @page.lede
+    else
+      self.description = fetch_description
+    end
   end
 end

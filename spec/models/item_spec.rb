@@ -36,7 +36,7 @@ describe Item do
       item.stub(:fetch_title).and_return(title)
       item.save!
       expect(item.title).to eq(title)
-    end
+    end  
 
     it "should set the item content with the website body" do
       item = Item.new url: 'http://example.com'
