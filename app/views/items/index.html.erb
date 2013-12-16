@@ -5,13 +5,15 @@
     </section>
 </div>
 
-<section class="inline text margin column_12">
+<div class="row text margin column_12">
 <% @items.each do |item| %>
-    <div class="bck column_4 margin item-result">
-        <header class="padding-bottom">
-            <h2><%= link_to item.title, item.url, target: 'blank' %><h2>
+    <section class="bck column_3 padding item-result">
+        <header>
+            <h3 class="text bold"><%= link_to item.title, item.url, target: 'blank' %></h3>
         </header>
-        <p><%= item.description %></p>
-    </div>
+        <p class="padding-bottom"><%= item.description %></p>
+        <p> <%= link_to 'Edit Item',edit_item_path(item), class: 'button anchor secondary' %></span>
+        </p>
+    </section>
     <% end %>
-</section>
+</div>
