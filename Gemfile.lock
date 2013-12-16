@@ -251,6 +251,7 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh
       term-ansicolor
+    stopwords (0.2)
     teaspoon (0.7.7)
       phantomjs (>= 1.8.1.1)
       railties (>= 3.2.5, < 5)
@@ -307,6 +308,7 @@ DEPENDENCIES
   sdoc
   selenium-webdriver
   simple_form
+  stopwords
   teaspoon
   uglifier (>= 1.3.0)
   validate_url

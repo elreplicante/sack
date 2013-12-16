@@ -12,6 +12,7 @@ gem 'validate_url'
 gem 'pismo'
 gem 'rest-client'
 gem 'mongoid_search'
+gem 'stopwords'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
