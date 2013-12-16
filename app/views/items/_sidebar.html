@@ -1,10 +1,10 @@
-<aside class="bck column_4 relative">
+<aside class="bck column_4">
     <article>
-    <div class="sack-icon align center">
+    <div class="align left">
     <%= render partial: 'item_form', locals: { item: @item } %>
-        <div class="margin counter" data-tuktuk="totals">
+        <div class="counter margin-top" >
              <p class="notice"><%= notice %></p>
-            <strong><%= items.count %></strong><small> items in your sack</small>
+            <small>You have </small><strong><%= Item.count %></strong><small> items in your sack</small>
         </div>
     </div>  
     </article>  

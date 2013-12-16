@@ -1,11 +1,17 @@
-<%= render partial: 'sidebar', locals: { items: @items }  %>
-<section class="bck text">
-    <%= render partial: 'search_form', locals: { items: @items } %>
-</section>
+<div class="row">
+    <%= render partial: 'sidebar', locals: { items: @items }  %>
+    <section class="bck text">
+        <%= render partial: 'search_form', locals: { items: @items } %>
+    </section>
+</div>
 
-<section>
+<section class="inline text margin column_12">
 <% @items.each do |item| %>
-        <header><%= link_to item.title, item.url %></header>
+    <div class="bck column_4 margin item-result">
+        <header class="padding-bottom">
+            <h2><%= link_to item.title, item.url, target: 'blank' %><h2>
+        </header>
         <p><%= item.description %></p>
+    </div>
     <% end %>
 </section>

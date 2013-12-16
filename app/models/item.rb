@@ -11,6 +11,7 @@ class Item
   validates_presence_of :url
   validates_url :url
 
+  after_validation :fetch_url
   before_save :set_title, :set_content, :set_description
 
   search_in :title, :description, :content
@@ -23,6 +24,23 @@ class Item
     end
   end
 
+  protected
+  def fetch_title
+    @page.title
+  end
+
+  def fetch_content
+    @page.body
+  end
+
+  def fetch_url
+    @page = Pismo::Document.new(url)
+  end
+
+  def fetch_description
+    @page.description
+  end
+
   def set_title
     self.title = fetch_title
   end
@@ -33,21 +51,5 @@ class Item
 
   def set_description
     self.description = fetch_description
-  end
-
-  protected
-  def fetch_title
-    page = Pismo::Document.new(url)
-    page.title
-  end
-
-  def fetch_content
-    page = Pismo::Document.new(url)
-    page.body
-  end
-
-  def fetch_description
-    page = Pismo::Document.new(url)
-    meta_desc = page.description
   end
 end

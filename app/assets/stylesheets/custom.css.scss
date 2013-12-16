@@ -28,6 +28,6 @@ body button:not(.transparent).secondary {
 
 body form input[type="text"]:required { border-color: $blue; color: $blue }
 
-.sack-icon {
-
+.item-result {
+    text-overflow: ellipsis;
     }
