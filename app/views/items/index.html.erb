@@ -2,3 +2,10 @@
 <section class="bck text">
     <%= render partial: 'search_form', locals: { items: @items } %>
 </section>
+
+<section>
+<% @items.each do |item| %>
+        <header><%= link_to item.title, item.url %></header>
+        <p><%= item.description %></p>
+    <% end %>
+</section>

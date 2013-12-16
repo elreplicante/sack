@@ -52,6 +52,7 @@ group :development, :test do
   gem 'pry'
   gem 'pry-debugger'
   gem 'mongoid-rspec'
+  gem 'capistrano'
 end
 
 group :production do

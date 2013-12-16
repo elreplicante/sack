@@ -1,5 +1,7 @@
-<div class="column_6 form subscribe">
-    <input type="email" id="mail" class="large" placeholder="Search in your sack">
-    <button class="button large icon search"></button>
+<div class="column_6 form margin subscribe">
+    <%= form_tag items_path, method: :get do %>
+        <%= text_field_tag :search, params[:search], placeholder: 'Search items in the sack' %>
+        <%= submit_tag "Search", nam: nil %>
+    <% end %>
 </div>
 

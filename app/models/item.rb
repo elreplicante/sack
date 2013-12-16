@@ -15,6 +15,14 @@ class Item
 
   search_in :title, :description, :content
   
+  def self.search(search)
+    if search
+      full_text_search(search)
+    else
+      Item.all
+    end
+  end
+
   def set_title
     self.title = fetch_title
   end
