@@ -2,8 +2,6 @@ require 'spec_helper'
 
 describe Item do
 
-  let(:item) { build(:item) }
-
   describe "with valid attributes" do
     it "should be valid" do
       expect(build(:item)).to be_valid
@@ -12,7 +10,6 @@ describe Item do
 
   it { should have_fields(:url, :title, :description, :content).of_type(String) }
   it { should validate_presence_of(:url) }
-
 
   describe "Parsing an url" do
     let(:title) { "Example Domain" }

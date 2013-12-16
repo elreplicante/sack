@@ -113,25 +113,25 @@ describe ItemsController do
       @item = create(:item, url: 'http://searchexample.com', description: 'description')
     end
 
-    it "shows no items with an empty search" do
+    it "returns no items with an empty search" do
       get :index, {search: '' }, valid_session
 
       expect(assigns(:items)).to eq([])
     end
 
-    it "shows the item if the search contains an item keyword" do
+    it "returns the item if the search contains an item keyword" do
       get :index, {search: 'search' }, valid_session
 
       expect(assigns(:items)).to eq([@item])
     end
 
-    it "shows the item if the search contains a word from title" do
+    it "returns the item if the search contains a word from title" do
       get :index, {search: 'sale' }, valid_session
 
       expect(assigns(:items)).to eq([@item])
     end
 
-    it "shows the item if the search contains a word from description" do
+    it "returns the item if the search contains a word from description" do
       get :index, {search: 'memorable' }, valid_session
 
       expect(assigns(:items)).to eq([@item])
