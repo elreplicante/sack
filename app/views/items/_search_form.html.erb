@@ -1,4 +1,8 @@
-<div class="column_6 form margin subscribe">
+<div>
+    <header class="align center">
+        <h1 class="text bold">Start picking</h1>
+        <h6 class="align right"><strong><%= Item.count %></strong> items in your sack</h6>
+    </header>
     <%= form_tag items_path, method: :get do %>
         <%= text_field_tag :search, params[:search], placeholder: 'Search items in the sack' %>
         <%= submit_tag "Search", nam: nil %>

@@ -12,7 +12,7 @@ class Item
   validates_url :url
 
   after_validation :fetch_url
-  before_save :set_title, :set_content, :set_description
+  before_create :set_title, :set_content, :set_description
 
   search_in :title, :description, :content
   
