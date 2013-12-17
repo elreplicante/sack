@@ -5,7 +5,7 @@ var item = { 'url': 'http://example.com' };
   it("should make an Ajax request to the correct URL", function() {
     spyOn($, "ajax");
 
-    sendRequest(undefined, configuration);
+    sendRequest(undefined, configuration, item);
 
     expect($.ajax.mostRecentCall.args[0]["url"]).toEqual(configuration.url);
   });
@@ -19,7 +19,7 @@ var item = { 'url': 'http://example.com' };
         displayErrorMessage: jasmine.createSpy(),
     };
  
-    sendRequest(callbacks, configuration);
+    sendRequest(callbacks, configuration, item);
 
     expect(callbacks.displaySuccessMessage).toHaveBeenCalled();
     expect(callbacks.displayErrorMessage).not.toHaveBeenCalled();
@@ -33,7 +33,7 @@ var item = { 'url': 'http://example.com' };
         displayErrorMessage : jasmine.createSpy()
     };
  
-    sendRequest(callbacks, configuration);
+    sendRequest(callbacks, configuration, item);
     expect(callbacks.displayErrorMessage).toHaveBeenCalled();
  
   });

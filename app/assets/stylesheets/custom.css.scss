@@ -32,3 +32,7 @@ body form input[type="text"]:required { border-color: $blue; color: $blue }
     visibility: hidden;
 }
 
+#error-message {
+    visibility: hidden;
+}
+
