@@ -5,10 +5,14 @@ $red: #CC2525;
 $green: #00A06E;
 $blue: #2565C7;
 $dark: #0D1628;
+$brown: #323133;
 
 body {
+
+    color: $brown;
+
     .bck.dark {
-    background: $dark;
+    background: $brown;
     
     }
 }
@@ -17,13 +21,13 @@ body, html { height: 100% }
 
 body .button:not(.transparent), body button:not(.transparent) {
     background: none;
-    color: $dark;
+    color: $brown;
 }
 
 body .button:not(.transparent).secondary,
 body button:not(.transparent).secondary {
-    background: $dark;
-    color: $dark;
+    background: $brown;
+    color: $brown;
 }
 
 body form input[type="text"]:required { border-color: $blue; color: $blue }
