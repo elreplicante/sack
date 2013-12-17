@@ -11,9 +11,7 @@
                         class: 'text underline color darkest bold' %>:
                 <small><%= item.description %></small>
             <a href="#" > <span class="on-right" id="toggle-edit-form" >Click to edit</span></a>
-
                 <%= render partial: 'edit_item_form', locals: { item: item } %>
-
             </div>
         </article>
     <% end %>

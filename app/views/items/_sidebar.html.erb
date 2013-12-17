@@ -4,6 +4,7 @@
             <%= image_tag 'sack.png', width: '200' %>
         </header>
          <p class="notice"><%= notice %></p>
+         <%= render partial: 'item_form', locals: { item: @item } %>
          <%= render partial: 'success_modal' %>
     </section>  
 </aside>
