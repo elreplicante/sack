@@ -6,7 +6,7 @@ Mongoid::Search.setup do |config|
   config.allow_empty_search = false
 
   ## If true, will search with relevance information
-  config.relevant_search = false
+  config.relevant_search = true
 
   ## Stem keywords
   config.stem_keywords = false
@@ -25,7 +25,7 @@ Mongoid::Search.setup do |config|
   # config.ignore_list = YAML.load(File.open(File.dirname(__FILE__) + '/config/ignorelist.yml'))["ignorelist"]
 
   ## Search using regex (slower)
-  config.regex_search = true
+  config.regex_search = false
 
   ## Regex to search
 
