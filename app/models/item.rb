@@ -17,43 +17,30 @@ class Item
   search_in :title, :description, :content
   
   def self.search(search)
-    if search
-      full_text_search(search)
-    else
-      Item.all
+    if search && search != ''
+      return full_text_search(search)
     end
+    Item.all
   end
 
   protected
-  def fetch_title
-    @page.title
-  end
-
-  def fetch_content
-    @page.body
-  end
-
   def fetch_url
     @page = Pismo::Document.new(url)
   end
 
-  def fetch_description
-    @page.description
-  end
-
   def set_title
-    self.title = fetch_title
+    self.title = @page.title
   end
 
   def set_content
-    self.content = fetch_content
+    self.content = @page.body
   end
 
   def set_description
-    if fetch_description == nil
+    if @page.description == nil
       self.description = @page.lede
     else
-      self.description = fetch_description
+      self.description = @page.description
     end
   end
 end

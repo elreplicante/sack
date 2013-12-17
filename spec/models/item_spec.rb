@@ -12,6 +12,7 @@ describe Item do
   it { should validate_presence_of(:url) }
 
   describe "Parsing an url" do
+    let(:item) { double('item', url: 'http://example.com') }
     let(:title) { "Example Domain" }
     let(:description) { "Mock description" }
     let(:content) do  '''
@@ -31,35 +32,23 @@ describe Item do
     let(:body) { '<body>Hola Mundo</body>' } 
 
     it "should set the item title with the website title" do
-      item = Item.new url: 'http://example.com'
-
-      item.stub(:fetch_title).and_return(title)
-      item.save!
+      item.stub(:title).and_return(title)
       expect(item.title).to eq(title)
     end  
 
     it "should set the item content with the website body" do
-      item = Item.new url: 'http://example.com'
-
-      item.stub(:fetch_content).and_return(body)
-      item.save!
+      item.stub(:content).and_return(body)
       expect(item.content).to eq(body)
     end
 
     context "fetching the description" do
       it "should set the item description if present" do
-        item = Item.new url: 'http://example.com'
-
-        item.stub(:fetch_description).and_return(description)
-        item.save!
+        item.stub(:description).and_return(description)
         expect(item.description).to eq(description)
       end
 
       it "should set an excerpt if not present" do
-        item = Item.new url: 'http://example.com'
-
-        item.stub(:fetch_description).and_return('')
-        item.save!
+        item.stub(:description).and_return('')
         expect(item.description).to eq('')
       end
     end
