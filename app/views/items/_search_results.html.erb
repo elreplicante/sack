@@ -1,13 +1,14 @@
-<section class="row text column_9">
+<section>
+    <p class="align right margin-bottom"><small>Your search returned </small><strong><%= items.size %></strong><small> hits in your sack</small></p>
     <% items.each do |item| %>
-        <article class="bck light margin padding">
+        <article class="bck light margin-bottom padding">
             <header>
             </header>
             <div>
                     <%= link_to item.title,
                         item.url,
                         target: 'blank',
-                        class: 'text underline color darkest' %>:
+                        class: 'text underline color darkest bold' %>:
                 <small><%= item.description %></small>
             <a href="#" > <span class="on-right" id="toggle-edit-form" >Click to edit</span></a>
 

@@ -1,3 +1,5 @@
+@import url("http://fonts.googleapis.com/css?family=Raleway:400,300,600");
+
 $alizarin: #e74c3c;
 $pomegranate: #cb3f30;
 $orange: #F98200;
@@ -8,6 +10,7 @@ $dark: #0D1628;
 $brown: #323133;
 
 body {
+    font-family: 'Raleway';
     color: $brown;
     .bck.dark {
     background: $brown;
@@ -28,6 +31,12 @@ body button:not(.transparent).secondary {
 }
 
 body form input[type="text"]:required { border-color: $blue; color: $blue }
+
+strong {
+    font-weight: 600 !important;
+}
+
+h1 { font-size: 3.6em; }
 
 #success-message {
     visibility: hidden;
