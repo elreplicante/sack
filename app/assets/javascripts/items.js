@@ -38,7 +38,7 @@ function sendRequest(callbacks, configuration, item) {
         },
         timeout: configuration.remainingCallTime
     });
-} 
+}
 
 
 

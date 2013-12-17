@@ -1,11 +1,19 @@
 <section class="row text column_9">
     <% items.each do |item| %>
         <article class="bck light margin padding">
-                <%= link_to item.title,
-                    item.url,
-                    target: 'blank',
-                    class: 'text underline color darkest' %>:
-            <small><%= item.description %></small>
+            <header>
+            </header>
+            <div>
+                    <%= link_to item.title,
+                        item.url,
+                        target: 'blank',
+                        class: 'text underline color darkest' %>:
+                <small><%= item.description %></small>
+            <a href="#" > <span class="on-right" id="toggle-edit-form" >Click to edit</span></a>
+
+                <%= render partial: 'edit_item_form', locals: { item: item } %>
+
+            </div>
         </article>
     <% end %>
 </section>

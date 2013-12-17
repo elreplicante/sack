@@ -8,12 +8,9 @@ $dark: #0D1628;
 $brown: #323133;
 
 body {
-
     color: $brown;
-
     .bck.dark {
     background: $brown;
-    
     }
 }
 
@@ -39,4 +36,9 @@ body form input[type="text"]:required { border-color: $blue; color: $blue }
 #error-message {
     visibility: hidden;
 }
+
+#edit-item-form {
+    display: none;
+}
+
 

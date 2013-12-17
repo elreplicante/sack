@@ -1,5 +1,7 @@
-<%= simple_form_for(item) do |f| %>
+<div id="edit-item-form">
+    <%= simple_form_for(item) do |f| %>
     <%= f.input :title %>
     <%= f.input :description, as: :text %>
     <%= f.submit %>
 <% end %>
+</div>
