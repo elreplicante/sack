@@ -38,7 +38,11 @@ class ItemsController < ApplicationController
 
   protected
   def item_params
-    params.require(:item).permit(:url, :title, :description)
+    if params.has_key?(:item)
+      params.require(:item).permit(:url, :title, :description)
+    else
+      { url: request.raw_post }
+    end
   end
 
   def set_item
