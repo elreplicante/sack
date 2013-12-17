@@ -1,7 +1,7 @@
 <section class="margin-bottom">
     <header class="column_5 margin-bottom offset_1 align right">
         <h1 class="text bold">start picking</h1>
-        <h5><strong><%= Item.count %></strong> items in your sack</h5>
+        <h5><strong class="color theme"><%= Item.count %></strong> items in your sack</h5>
     </header>
     <%= form_tag items_path, method: :get do %>
         <%= text_field_tag :search, params[:search], placeholder: 'Search items in the sack' %>
