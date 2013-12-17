@@ -38,9 +38,9 @@ class Item
 
   def set_description
     if @page.description == nil
-      self.description = @page.lede
+      self.description ||= @page.lede
     else
-      self.description = @page.description
+      self.description ||= @page.description
     end
   end
 end
