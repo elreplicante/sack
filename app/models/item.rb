@@ -8,6 +8,8 @@ class Item
   field :description, type: String
   field :content, type: String
 
+  embedded_in :sak
+
   validates_presence_of :url
   validates_url :url
 

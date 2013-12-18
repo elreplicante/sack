@@ -5,5 +5,6 @@ FactoryGirl.define do
     url "http://example.com"
     title "Item"
     description "description"
+    id 1234
   end
 end

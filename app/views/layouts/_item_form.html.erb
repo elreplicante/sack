@@ -1,4 +1,4 @@
-<%= simple_form_for(item) do |f| %>
+<%= simple_form_for([@sak, item]) do |f| %>
     <%= f.input :url, as: :url, placeholder: 'Add an item to the sack' %>
     <%= f.submit %>
 <% end %>

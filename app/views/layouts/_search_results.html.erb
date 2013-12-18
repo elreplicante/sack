@@ -10,7 +10,7 @@
                         target: 'blank',
                         class: 'text underline color darkest bold' %>:
                 <small><%= item.description %></small>
-                <%= link_to 'Click to edit', edit_item_path(item), class: 'on-right', id: 'toggle-edit-form' %>
+                <%= link_to 'Click to edit', edit_sak_item_path(@sak, item._id), class: 'on-right', id: 'toggle-edit-form' %>
             </div>
         </article>
     <% end %>

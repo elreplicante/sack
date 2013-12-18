@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
 
+  before_action :set_sak, except: [:show, :update]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-
+  
   def index
-    @items = Item.search(params[:search])
+    @items = @sak.items
     @item = Item.new
   end
 
@@ -11,13 +12,13 @@ class ItemsController < ApplicationController
   end
 
   def new
-    @item = Item.new
+    @item = @sak.items.build
   end
 
   def create
-    @item = Item.new(item_params)
+    @item = @sak.items.build(item_params)
     if @item.save
-      redirect_to items_path, notice: 'Item was added to the sack' 
+      redirect_to sak_path(@sak), notice: 'Item was added to the sack' 
     else
       render action: :new
     end
@@ -28,7 +29,7 @@ class ItemsController < ApplicationController
 
   def update
     if @item.update(item_params)
-      redirect_to items_path, notice: 'Item was succesfuly updated'
+      redirect_to sak_path(@sak), notice: 'Item was succesfuly updated'
     end
   end
 
@@ -47,5 +48,9 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_sak
+    @sak = Sak.find(params[:sak_id])
   end
 end
