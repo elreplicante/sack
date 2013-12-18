@@ -1,12 +1,6 @@
 @import url("http://fonts.googleapis.com/css?family=Sintony:400,700");
 $alizarin: #e74c3c;
-$pomegranate: #cb3f30;
-$orange: #F98200;
-$red: #CC2525;
-$green: #48e5b5;
-$blue: #2565C7;
-$dark: #0D1628;
-$brown: #323133;
+
 $pink: #ff5562;
 $grey: #313033;
 
@@ -44,7 +38,11 @@ body form input[type="text"].error, body .form input[type="text"].error, body fo
     color: $grey;
 }
 
-body form input[type="text"]:required { border-color: $blue; color: $blue }
+body form input[type="text"]:focus, body .form input[type="text"]:focus, body form input[type="password"]:focus, body .form input[type="password"]:focus, body form input[type="date"]:focus, body .form input[type="date"]:focus, body form input[type="datetime"]:focus, body .form input[type="datetime"]:focus, body form input[type="email"]:focus, body .form input[type="email"]:focus, body form input[type="number"]:focus, body .form input[type="number"]:focus, body form input[type="search"]:focus, body .form input[type="search"]:focus, body form input[type="tel"]:focus, body .form input[type="tel"]:focus, body form input[type="time"]:focus, body .form input[type="time"]:focus, body form input[type="url"]:focus, body .form input[type="url"]:focus, body form select:focus, body .form select:focus, body form textarea:focus, body .form textarea:focus {
+    border-color: $pink;
+}
+
+body form input[type="text"]:required { border-color: $pink; color: $pink }
 
 body:not(.color):not(.dark) a {
     color: $pink;
@@ -67,5 +65,3 @@ h1 { font-size: 3.6em; }
 #edit-item-form {
 
 }
-
-
