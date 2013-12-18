@@ -22,7 +22,7 @@ describe ItemsController do
     xit "lists the item as @item" do
       get :show, { sak_id: sak.to_param, id: persisted_item.to_param }, valid_session
 
-      expect(assigns(:item)).to eq(persisted_item)
+      expect(assigns(:persisted_item)).to eq(persisted_item)
     end
   end
 
@@ -120,22 +120,22 @@ describe ItemsController do
       expect(assigns(:items)).to eq([item])
     end
 
-    xit "returns the item if the search contains an item keyword" do
-      get :index, {search: 'search' }, valid_session
+    it "returns the item if the search contains an item keyword" do
+      get :index, {sak_id: sak.to_param, search: 'search' }, valid_session
 
-      expect(assigns(:items)).to eq([@item])
+      expect(assigns(:items)).to eq([item])
     end
 
-    xit "returns the item if the search contains a word from title" do
-      get :index, {search: 'sale' }, valid_session
+    it "returns the item if the search contains a word from title" do
+      get :index, {sak_id: sak.to_param, search: 'sale' }, valid_session
 
-      expect(assigns(:items)).to eq([@item])
+      expect(assigns(:items)).to eq([item])
     end
 
-    xit "returns the item if the search contains a word from description" do
-      get :index, {search: 'memorable' }, valid_session
+    it "returns the item if the search contains a word from description" do
+      get :index, {sak_id: sak.to_param, search: 'memorable' }, valid_session
 
-      expect(assigns(:items)).to eq([@item])
+      expect(assigns(:items)).to eq([item])
     end
   end
 end
