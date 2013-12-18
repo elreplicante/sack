@@ -1,5 +1,4 @@
-@import url("http://fonts.googleapis.com/css?family=Raleway:400,300,600");
-
+@import url("http://fonts.googleapis.com/css?family=Sintony:400,700");
 $alizarin: #e74c3c;
 $pomegranate: #cb3f30;
 $orange: #F98200;
@@ -8,12 +7,14 @@ $green: #48e5b5;
 $blue: #2565C7;
 $dark: #0D1628;
 $brown: #323133;
+$pink: #ff5562;
+$grey: #313033;
 
 body {
-    font-family: 'Raleway';
-    color: $brown;
+    font-family: 'Sintony';
+    color: $grey;
     .bck.dark {
-    background: $brown;
+    background: $grey;
     }
 }
 
@@ -21,30 +22,33 @@ body, html { height: 100% }
 
 body .button:not(.transparent), body button:not(.transparent) {
     background: none;
-    color: $brown;
+    color: $grey;
 }
 
 body .color.theme {
-    color: $green !important;
+    color: $pink !important;
 }
 
 body .button:not(.transparent).secondary,
 body button:not(.transparent).secondary {
-    background: $brown;
-    color: $brown;
+    background: $grey;
+    color: $grey;
 }
 
 body form input[type="text"], body .form input[type="text"], body form input[type="password"], body .form input[type="password"], body form input[type="date"], body .form input[type="date"], body form input[type="datetime"], body .form input[type="datetime"], body form input[type="email"], body .form input[type="email"], body form input[type="number"], body .form input[type="number"], body form input[type="search"], body .form input[type="search"], body form input[type="tel"], body .form input[type="tel"], body form input[type="time"], body .form input[type="time"], body form input[type="url"], body .form input[type="url"], body form select, body .form select, body form textarea, body .form textarea { 
-    border: 1px solid $brown;
+    border: 1px solid $grey;
 }
 
 body form input[type="text"].error, body .form input[type="text"].error, body form input[type="password"].error, body .form input[type="password"].error, body form input[type="date"].error, body .form input[type="date"].error, body form input[type="datetime"].error, body .form input[type="datetime"].error, body form input[type="email"].error, body .form input[type="email"].error, body form input[type="number"].error, body .form input[type="number"].error, body form input[type="search"].error, body .form input[type="search"].error, body form input[type="tel"].error, body .form input[type="tel"].error, body form input[type="time"].error, body .form input[type="time"].error, body form input[type="url"].error, body .form input[type="url"].error, body form select.error, body .form select.error, body form textarea.error, body .form textarea.error, body form input[type="text"]:required, body .form input[type="text"]:required, body form input[type="password"]:required, body .form input[type="password"]:required, body form input[type="date"]:required, body .form input[type="date"]:required, body form input[type="datetime"]:required, body .form input[type="datetime"]:required, body form input[type="email"]:required, body .form input[type="email"]:required, body form input[type="number"]:required, body .form input[type="number"]:required, body form input[type="search"]:required, body .form input[type="search"]:required, body form input[type="tel"]:required, body .form input[type="tel"]:required, body form input[type="time"]:required, body .form input[type="time"]:required, body form input[type="url"]:required, body .form input[type="url"]:required, body form select:required, body .form select:required, body form textarea:required, body .form textarea:required {
-    border-color: $brown !important;
-    color: $brown;
+    border-color: $grey !important;
+    color: $grey;
 }
 
 body form input[type="text"]:required { border-color: $blue; color: $blue }
 
+body:not(.color):not(.dark) a {
+    color: $pink;
+}
 
 strong {
     font-weight: 600 !important;
