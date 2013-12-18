@@ -18,14 +18,6 @@ describe ItemsController do
     end
   end
 
-  describe "showing an item" do
-    xit "lists the item as @item" do
-      get :show, { sak_id: sak.to_param, id: persisted_item.to_param }, valid_session
-
-      expect(assigns(:persisted_item)).to eq(persisted_item)
-    end
-  end
-
   describe "Creating an item" do
     it "assigns a new item as @item" do
       get :new, {sak_id: sak.to_param}, valid_session
@@ -34,11 +26,6 @@ describe ItemsController do
     end
 
     describe "with valid params" do
-      xit "creates a new item" do
-        expect { post :create, { sak_id: sak.to_param, item: valid_item_attributes }, valid_session
-
-        }.to change(Item, :count).by(1)
-      end
 
       it "assigns a newly created item as @item" do
         post :create, { sak_id: sak.to_param, item: valid_item_attributes }, valid_session
@@ -60,7 +47,8 @@ describe ItemsController do
 
   describe "editing an item" do
     xit "assigns the requested item as an @item" do
-        get :edit, {sak_id: sak.to_param, id: item.to_param}, valid_session
+
+        get :edit, {sak_id: sak.to_param, id: '1234'}, valid_session
 
         expect(assigns(:item)).to eq(item)
     end

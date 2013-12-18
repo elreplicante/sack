@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 
-  before_action :set_sak, except: [:show, :update]
+  before_action :set_sak, except: [:show]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   
   def index
@@ -47,7 +47,7 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    @item = Item.find(params[:id])
+    @item = Sak.find(params[:sak_id]).items.find(params[:id])
   end
 
   def set_sak

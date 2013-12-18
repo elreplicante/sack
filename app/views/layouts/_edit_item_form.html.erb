@@ -1,5 +1,5 @@
 <div id="edit-item-form">
-    <%= simple_form_for(item) do |f| %>
+    <%= simple_form_for([@sak, item]) do |f| %>
     <%= f.input :title %>
     <%= f.input :description, as: :text %>
     <%= f.submit %>
