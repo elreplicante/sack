@@ -10,14 +10,6 @@ describe ItemsController do
 
   let(:valid_session) { {} }   
 
-  describe "showing all items" do
-    it "lists all items as @items" do
-      get :index, {sak_id: sak.to_param }, valid_session
-
-      expect(assigns(:items)).to eq([item])
-    end
-  end
-
   describe "Creating an item" do
     it "assigns a new item as @item" do
       get :new, {sak_id: sak.to_param}, valid_session
@@ -58,7 +50,8 @@ describe ItemsController do
         Item.any_instance.should_receive(:update).with({ "title" => "A name" })
 
         put :update, {
-          sak_id: sak.to_param, 
+          sak_id: sak.to_param,
+          id: persisted_item.to_param, 
           item: { title: "A name" }
           }, valid_session
       end
@@ -92,38 +85,12 @@ describe ItemsController do
     xit "destroys the requested item" do
       persisted_item = create(:item, sak: sak)
 
-      expect {
-        delete :destroy, {sak_id: sak.to_param,
-                          id: persisted_item.to_param },
-                          valid_session
+      expect { delete :destroy,
+              { sak_id: sak.to_param, id: persisted_item.to_param },
+               valid_session
       }.to change(Item, :count).by(-1)
     end
   end
 
-  describe "searching an item" do
 
-    it "returns all items with an empty search" do
-      get :index, {sak_id: sak.to_param, search: '' }, valid_session
-
-      expect(assigns(:items)).to eq([item])
-    end
-
-    it "returns the item if the search contains an item keyword" do
-      get :index, {sak_id: sak.to_param, search: 'search' }, valid_session
-
-      expect(assigns(:items)).to eq([item])
-    end
-
-    it "returns the item if the search contains a word from title" do
-      get :index, {sak_id: sak.to_param, search: 'sale' }, valid_session
-
-      expect(assigns(:items)).to eq([item])
-    end
-
-    it "returns the item if the search contains a word from description" do
-      get :index, {sak_id: sak.to_param, search: 'memorable' }, valid_session
-
-      expect(assigns(:items)).to eq([item])
-    end
-  end
 end

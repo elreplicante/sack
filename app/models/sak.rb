@@ -1,5 +1,6 @@
 class Sak
   include Mongoid::Document
 
-  embeds_many :items
+  has_many :items
+
 end
