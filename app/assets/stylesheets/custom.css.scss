@@ -15,7 +15,7 @@ body {
 body, html { height: 100% }
 
 body .button:not(.transparent), body button:not(.transparent) {
-    background: none;
+    background: $pink;
     color: $grey;
 }
 

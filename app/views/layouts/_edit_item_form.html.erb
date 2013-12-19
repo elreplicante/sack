@@ -2,6 +2,10 @@
     <%= simple_form_for([@sak, item]) do |f| %>
     <%= f.input :title %>
     <%= f.input :description, as: :text %>
-    <%= f.submit %>
+    <%= f.submit 'Update', class: 'button tiny' %>
+
+    <%= simple_form_for sak_item_path, action: :destroy, method: :delete do |f|%>
+    <%= f.button :submit, 'Delete', class: 'button secondary tiny' %>
+    <% end %>
 <% end %>
 </div>

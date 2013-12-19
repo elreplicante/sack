@@ -30,7 +30,11 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item.destroy
+    if @item.destroy
+      redirect_to sak_path(@sak), notice: 'Item was succesfuly deleted'
+    else
+      redirect_to sak_path(@sak), notice: 'Item not deleted'
+    end
   end
 
   protected
