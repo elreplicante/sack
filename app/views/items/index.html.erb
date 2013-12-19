@@ -1,5 +1,5 @@
 <div>
-    <%= render partial: 'layouts/sidebar', locals: { items: @items }  %>
+    <%= render partial: 'layouts/sidebar', locals: { items: @items, item: @item }  %>
     <section class="bck text margin column_9">
         <%= render partial: 'layouts/search_form', locals: { items: @items } %>
         <%= render partial: 'layouts/search_results', locals: { items: @items } %>

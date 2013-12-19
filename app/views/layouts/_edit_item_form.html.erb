@@ -3,9 +3,6 @@
     <%= f.input :title %>
     <%= f.input :description, as: :text %>
     <%= f.submit 'Update', class: 'button tiny' %>
-
-    <%= simple_form_for sak_item_path, action: :destroy, method: :delete do |f|%>
-    <%= f.button :submit, 'Delete', class: 'button secondary tiny' %>
-    <% end %>
+    <%= link_to 'Delete', sak_item_path, class: 'button secondary tiny', method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 </div>

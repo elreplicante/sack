@@ -3,12 +3,21 @@ class ItemsController < ApplicationController
   before_action :set_sak, except: [:show]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   
+  def index
+    @item = @sak.items.build
+    @items = @sak.items
+    @search_items = @sak.items.all
+    if params[:search] && params[:search] != ''
+      @search_items = @sak.items.full_text_search(params[:search])
+    end
+  end
 
   def show
   end
 
   def new
     @item = @sak.items.build
+
   end
 
   def create
@@ -16,7 +25,7 @@ class ItemsController < ApplicationController
     if @item.save
       redirect_to sak_path(@sak), notice: 'Item was added to the sack' 
     else
-      render action: :new
+      redirect_to sak_path(@sak), error: "Something went wrong"
     end
   end
 

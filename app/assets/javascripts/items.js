@@ -1,5 +1,5 @@
 var   configuration = {
-  url: '/items',
+  url: 'http://0.0.0.0:3000/saks/52b1d97f4d61630a7d000000/items',
   type: 'POST',
   remainingCallTime: 30000
 }
@@ -24,11 +24,11 @@ var callbacks = {
   displayErrorMessage: displayErrorMessage
 }
 
-function sendRequest(callbacks, configuration, item) {
+function sendRequest(callbacks, configuration, url) {
     $.ajax({
         url: configuration.url,
         type: configuration.type,
-        data: item.url,
+        data: url,
         cache: false,
         success: function(data) {
             callbacks.displaySuccessMessage();
