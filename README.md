@@ -1,7 +1,8 @@
 SACK
-================
+====
+[![Build Status](https://travis-ci.org/elreplicante/sack.png?branch=master)](https://travis-ci.org/elreplicante/sack)
 
-Ruby 1.9.3
+Ruby 2.0.0
 
 First install Bundler
 
