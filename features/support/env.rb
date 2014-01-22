@@ -15,8 +15,8 @@ SimpleCov.start
 
 Capybara.app = Sack
 Capybara.default_driver = :webkit
-Capybara.default_wait_time = 5
 Capybara.javascript_driver = :webkit
+Capybara.default_wait_time = 5
 
 class SackWorld
   include Capybara::DSL
