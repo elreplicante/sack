@@ -4,6 +4,6 @@ coverage
 *.swp
 *.rbc
 *.sass-cache
-/pkg
-/doc/api
-/Gemfile.lock
+pkg
+doc/api
+Gemfile.lock
