@@ -9,9 +9,11 @@ require 'capybara-webkit'
 require 'capybara/dsl'
 require 'capybara/cucumber'
 require 'rspec'
+require 'simplecov'
+
+SimpleCov.start
 
 Capybara.app = Sack
-#Capybara.run_server = true
 Capybara.default_driver = :webkit
 Capybara.default_wait_time = 5
 Capybara.javascript_driver = :webkit

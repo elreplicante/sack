@@ -11,4 +11,6 @@ group :development, :test do
  gem 'rspec'
  gem 'selenium-webdriver'
  gem 'capybara-webkit'
+ gem 'jasmine'
+ gem 'simplecov', :require => false
 end

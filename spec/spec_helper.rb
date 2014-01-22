@@ -13,7 +13,11 @@ require 'rack/test'
 require 'capybara'
 require 'capybara/rspec'
 require 'capybara-webkit'
+require 'simplecov'
+
 include Rack::Test::Methods
+
+SimpleCov.start
 
 Capybara.app = Sack 
 
