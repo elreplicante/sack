@@ -1,21 +1,19 @@
-# sack
+SACK
+================
 
-[![Build Status](https://travis-ci.org/elreplicante/sack.png?branch=master)](https://travis-ci.org/elreplicante/sack)
+Ruby 1.9.3
 
-Control information before information controls you!.  Sack is a simple search engine focused in your interests.  Simply add an item to the sack and search over your stuff.
+First install Bundler
 
-This project is in a beta stage.  The main idea is to build a search engine that is not indexed by dark algorithms and commercial purposes.  Let's keep the web semantic!
+<code>gem install bundler</code>
 
-##Requirements
-1. Ruby 2.0.0
-2. Rails 4.0.0
-3. Mongodb >= 2.1
+Then run bundle inside the project directory
 
+Rake tasks:
 
-##Installation
-1. Git clone the repo
-2. <code>cd</code> into the sack folder and execute <code>bundle install</code>
-3. <code>rails s</code> and start adding items to the sack!
-
-
-
+* acceptance  -- run cucumber features
+* default     -- default
+* jasmine     -- run specs via server:ci
+* jasmine:ci  -- run continuous integration tests
+* serverup    -- run server
+* serverdown  -- stop server

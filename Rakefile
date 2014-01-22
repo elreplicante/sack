@@ -1,6 +1,12 @@
-# Add your own tasks in files placed in lib/tasks ending in .rake,
-# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
+require 'rubygems'
 
-require File.expand_path('../config/application', __FILE__)
+desc "Run server"
 
-Sack::Application.load_tasks
+  task :serverup do
+    system 'rackup -p 3000'
+  end
+
+desc "Stop server"
+  task :serverdown do
+    system 'pkill -9 -f rackup'
+  end
