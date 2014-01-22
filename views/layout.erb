@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%= erb :head %>
+   
+    <body data-offset="40">
+
+       <%= erb :header %>
+
+        <div class="container">
+
+            <%= yield %>
+
+            <%= erb :footer %>
+        </div>
+
+        <%= erb :scripts %>
+
+    </body>
+    
+</html>
+
+
+

@@ -8,6 +8,6 @@ class Sack < Sinatra::Base
   end
 
   get '/' do
-    'Hello Sack!'
+    erb :index
   end
 end
