@@ -18,15 +18,8 @@
  */
 @import "compass";
 @import "susy";
-
-$total-columns  : 12;
-$column-width   : 4em;
-$gutter-width   : 1em;
-$grid-padding   : $gutter-width;
-
-$show-grid-backgrounds  : true;
-
+@import "base";
 
 .container {
-  @include container(80em);
+  @include container(60em);
 }
