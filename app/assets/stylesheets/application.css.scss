@@ -12,14 +12,4 @@
  *
  *= require_tree .
  *= require_self
- *= compass
- *= susy
-
  */
-@import "compass";
-@import "susy";
-@import "base";
-
-.container {
-  @include container;
-}
