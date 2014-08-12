@@ -6,7 +6,7 @@ $gutter-width   : 1em;
 $grid-padding   : $gutter-width;
 $show-grid-backgrounds  : true;
 
-$pink: #ff5562;
+
 
 body {
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
@@ -14,6 +14,7 @@ body {
 
 .container {
   @include container;
+  padding-top: 2em;
 }
 
 .center {

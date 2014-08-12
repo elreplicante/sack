@@ -1,0 +1,23 @@
+@import "colors";
+@import "base";
+
+.navbar {
+  @include clearfix;
+  background-color: $pink;
+  padding: 0.125em 0;
+}
+
+.nav-list {
+  @include span-columns(2 omega);
+  list-style: none;
+}
+
+.nav-item {
+  display: inline-block;
+  @include prefix(1);
+
+  a {
+    color: $black;
+    text-decoration: none;
+  }
+}

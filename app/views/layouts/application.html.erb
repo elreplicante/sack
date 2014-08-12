@@ -6,8 +6,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-        <%= yield %>
+    <nav class="navbar">
+        <ul class="nav-list">
+            <li class="nav-item"><%= link_to "Sign in", '#' %></li>
+            <li class="nav-item"><%= link_to "Sign up", '#' %></li>
+        </ul>
+    </nav>
+    <%= yield %>
 
 </body>
 </html>
