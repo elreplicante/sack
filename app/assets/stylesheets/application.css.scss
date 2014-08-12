@@ -21,5 +21,5 @@
 @import "base";
 
 .container {
-  @include container(60em);
+  @include container;
 }
