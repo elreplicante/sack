@@ -1,0 +1,14 @@
+language: ruby
+rvm:
+  - 2.1.2
+before_script:
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+services: mongodb
+notifications:
+  flowdock: 0e2bc8fa61d987db46b0fe9b2f217b0b
+deploy:
+  provider: heroku
+  api_key:
+    secure: GG5wquGkb8+DRcBmQLxMJVXFdk4V5aNn+kxDo38SlGU9xGh84QyFUVLj7C1tEqCmhPuS8FaZ2ZbhplEVSwLs5WKVxv9V4NKE03AT0rzh1lpYkZJrT6urlFi9XFI2fdlvf5ir09t1+MhOEPMZMNzb2PhajIx/CeFCDVwX5U/hNWo=
+  app: sackapp
