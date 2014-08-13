@@ -32,8 +32,15 @@ before_script:
 services: mongodb
 notifications:
   flowdock: 0e2bc8fa61d987db46b0fe9b2f217b0b
+before_install:
+  - which heroku || wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 deploy:
   provider: heroku
   api_key:
     secure: GG5wquGkb8+DRcBmQLxMJVXFdk4V5aNn+kxDo38SlGU9xGh84QyFUVLj7C1tEqCmhPuS8FaZ2ZbhplEVSwLs5WKVxv9V4NKE03AT0rzh1lpYkZJrT6urlFi9XFI2fdlvf5ir09t1+MhOEPMZMNzb2PhajIx/CeFCDVwX5U/hNWo=
   app: sackapp
+after_success:
+  # - test -f ~/.ssh/id_rsa.heroku || ssh-keygen -y -f ~/.ssh/id_rsa > ~/.ssh/id_rsa.heroku && heroku keys:add ~/.ssh/id_rsa.heroku
+  - git remote -v | grep ^heroku || heroku git:remote --app $APP_NAME
+  - git push -f heroku $BRANCH:master
+  # - heroku run rake db:migrate
