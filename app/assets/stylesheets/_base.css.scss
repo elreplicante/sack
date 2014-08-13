@@ -10,6 +10,7 @@ $show-grid-backgrounds  : true;
 
 body {
   font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  // @include susy-grid-background;
 }
 
 .container {
@@ -19,8 +20,4 @@ body {
 
 .center {
   text-align: center;
-}
-
-.claim {
-  font-size: 3.5em;
 }
